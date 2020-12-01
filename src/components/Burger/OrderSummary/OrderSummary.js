@@ -2,23 +2,23 @@ import React, { Component } from 'react'
 import Aux from '../../../hoc/Auxilary/Auxilary'
 import Button from '../../UI/Button/Button'
 
-class OrderSummary extends Component{
+class OrderSummary extends Component {
 
-    componentWillUpdate(){
+    componentWillUpdate() {
         console.log('[OrderSummary] WillUpdate');
     }
 
 
-    render(){
-        const ingredientSummary = Object.keys(this.props.ingredients).map((igkey)=>{
-            return <li key={igkey}><span style={{textTransform: "capitalize"}}>{igkey}</span>: {this.props.ingredients[igkey]}</li>
-            });
+    render() {
+        const ingredientSummary = Object.keys(this.props.ingredients).map((igkey) => {
+            return <li key={igkey}><span style={{ textTransform: "capitalize" }}>{igkey}</span>: {this.props.ingredients[igkey]}</li>
+        });
 
         return (
             <Aux>
                 <h3>Your Order</h3>
                 <ul>
-                {ingredientSummary}
+                    {ingredientSummary}
                 </ul>
                 <p><strong>Total Price: {this.props.price.toFixed(2)}</strong></p>
                 <p>Continue to checkout?</p>
